@@ -1,4 +1,5 @@
 import logging
+import traceback
 from flask import request
 from functools import wraps
 
@@ -20,7 +21,7 @@ def handle_request(func):
             }
         except Exception as error:
             # Log error
-            app_logger.error({"error": str(error)})
+            app_logger.error({"error": str(error), "traceback": traceback.format_exc()})
             return {
                 "code": 500,
                 "error_message": "INTERNAL ERROR",

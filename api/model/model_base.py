@@ -11,3 +11,6 @@ class ModelBase:
             if key in model_fields:
                 result_dict[key] = value
         return cls(**result_dict)
+
+    def to_dict(self, skip_none_value=True):
+        return {key: value for key, value in self.__dict__.items() if (not (value is None and skip_none_value))}
