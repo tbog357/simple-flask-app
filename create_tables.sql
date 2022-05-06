@@ -1,4 +1,10 @@
-CREATE TABLE customer(
+CREATE DATABASE "appdb"
+   WITH OWNER "postgres"
+   ENCODING 'UTF8';
+
+\c appdb;
+
+CREATE TABLE IF NOT EXISTS appdb.public.customer(
    id           SERIAL PRIMARY KEY NOT NULL,
    email        VARCHAR(50) UNIQUE NOT NULL,
    phone        VARCHAR(50),

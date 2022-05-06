@@ -9,4 +9,13 @@ services:
       - POSTGRES_PASSWORD=root
     volumes:
       - ./docker_volume/postgres_db:/var/lib/postgresql/data
-    
+      - ./create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+  
+  flask-app:
+    build: .
+    container_name: flask-app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./logs:/app/logs
+      - ./api:/app/api

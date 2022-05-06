@@ -11,13 +11,11 @@ app = Flask(__name__)
 
 
 @app.route("/", methods=["GET"])
-@handle_request
 def app_info():
     return {"app_info": "Simple Flask Application"}
 
 
 @app.errorhandler(404)
-@handle_request
 def api_not_found(e):
     return {"error_message": "API not found"}
 
