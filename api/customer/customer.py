@@ -1,4 +1,3 @@
-from tkinter.messagebox import NO
 from api.main.core.database import PostgresClient
 
 # local import
@@ -79,7 +78,7 @@ class Customer:
 
     # Main
     def create(self):
-        if self.is_customer_exist is False and not self.is_cutomer_deleted:
+        if self.is_customer_exist is False and not self.is_customer_deleted:
             # Create new customer by email
             self.request_customer_data.status = "active"
             self.db_customer_data = self.__insert_customer()
@@ -96,7 +95,10 @@ class Customer:
             # Re-ctive deleted customer
             self.request_customer_data.status = "active"
             result = self.__update_customer(fields=["status"])
-            return {"success": True, "customer_data": result}
+            return {
+                "success": True,
+                "customer_data": result,
+            }
         elif self.is_customer_exist is True:
             # Customer existed
             return {
