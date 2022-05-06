@@ -1,0 +1,2 @@
+{"file": "request_handler.py", "func": "wrapper", "level": "INFO", "message": {"path": "/?"}, "module": "/home/tbog/Projects/flask-app/api/main/core/request_handler.py", "time": 1651805357.2565255}
+{"file": "request_handler.py", "func": "wrapper", "level": "INFO", "message": {"path": "/?"}, "module": "/home/tbog/Projects/flask-app/api/main/core/request_handler.py", "time": 1651805504.0370173}

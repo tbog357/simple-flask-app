@@ -1,6 +1,9 @@
+import logging
 from flask import Flask
 
 # local import
+from api.main.core.logger import JsonLoggingFormatter
+
 from api.endpoint.routes import routes
 from api.main.core.request_handler import handle_request
 
@@ -27,4 +30,11 @@ for blueprint, url_prefix in routes:
     )
 
 if __name__ == "__main__":
+    loggingFileHandler = logging.FileHandler(filename="logs/app.log")
+    loggingFileHandler.setFormatter(JsonLoggingFormatter())
+
+    app_logger = logging.getLogger("app_logger")
+    app_logger.setLevel(logging.INFO)
+    app_logger.addHandler(loggingFileHandler)
+
     app.run()
