@@ -35,4 +35,4 @@ if __name__ == "__main__":
     app_logger.setLevel(logging.INFO)
     app_logger.addHandler(loggingFileHandler)
 
-    app.run()
+    app.run(host="0.0.0.0")
