@@ -12,7 +12,7 @@
 - touch logs/app.log
 
 ### Run all services
-- sudo docker-compose up
+- docker-compose up
 
 ## Postman collection:
 https://www.getpostman.com/collections/26834749f5bc00da35f2
